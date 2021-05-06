@@ -49,5 +49,5 @@ jobs:
     - name: Upload lib Artifact
       uses: actions/upload-artifact@v2.2.3
       with:
-        name: libs
-        path: ./libs  
+        name: lib
+        path: ./lib 
