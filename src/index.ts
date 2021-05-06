@@ -126,7 +126,7 @@ class NationalId {
     }
 
     // calculate national Id
-    const c = parseInt(value.charAt(9))
+    const c = parseInt(value.charAt(9), 10)
 
     const n =
       parseInt(value.charAt(0), 10) * 10 +
