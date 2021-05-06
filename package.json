@@ -1,0 +1,76 @@
+{
+  "name": "@danialf/nationalid",
+  "type": "commonjs",
+  "version": "0.0.3",
+  "description": "Iranian national id validator",
+  "keywords": [
+    "code meli",
+    "national id",
+    "codemeli",
+    "nationalid",
+    "ir-nationalid"
+  ],
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/types/index.d.ts",
+  "exports": {
+    "require": "./lib/cjs/index.js",
+    "import": "./lib/esm/index.js"
+  },
+  "files": [
+    "lib/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "lint": "tslint --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "clean": "rimraf lib && rimraf docs",
+    "ci": "npm run test:prod && npm run build:all",
+    "build": "npm run clean && npm run build:all && npm run docs",
+    "build:all": "npm run build:types && npm run build:esm && npm run build:cjs && npm run build:sjs && npm run build:umd",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:esm": "cross-env BABEL_ENV=esm babel src --extensions '.ts' --out-dir 'lib/esm' --source-maps",
+    "build:cjs": "cross-env BABEL_ENV=cjs babel src --extensions '.ts' --out-dir 'lib/cjs' --source-maps",
+    "build:sjs": "cross-env BABEL_ENV=sjs babel src --extensions '.ts' --out-dir 'lib/sjs' --source-maps",
+    "build:umd": "cross-env BABEL_ENV=umd babel src --extensions '.ts' --out-dir 'lib/umd' --source-maps",
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watch",
+    "test:prod": "npm run lint && npm run test --coverage --no-cache",
+    "docs": "npx typedoc"
+  },
+  "repository": {
+    "url": "https://github.com/danialf/lib-NationalId"
+  },
+  "author": "Danial Farzaneh",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/node": "^7.13.13",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-transform-classes": "^7.13.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.14.0",
+    "@babel/plugin-transform-modules-systemjs": "^7.13.8",
+    "@babel/plugin-transform-modules-umd": "^7.14.0",
+    "@babel/preset-env": "^7.14.0",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/jest": "^26.0.23",
+    "babel-jest": "^26.6.3",
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "cross-env": "^7.0.3",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.5.5",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^9.0.0",
+    "typedoc": "^0.20.36",
+    "typescript": "^4.2.4"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  }
+}

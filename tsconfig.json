@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "CommonJS",
+    "declaration": true,
+    "outDir": "./lib/types",
+    "strict": true,
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules","src/**/*.test.ts"
+  ],
+  "typedocOptions": {
+    "entryPoints": ["src/index.ts"],
+    "out": "docs"
+  }
+}
