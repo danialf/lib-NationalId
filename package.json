@@ -1,7 +1,7 @@
 {
   "name": "@danialf/nationalid",
   "type": "commonjs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Iranian national id validator",
   "keywords": [
     "code meli",
