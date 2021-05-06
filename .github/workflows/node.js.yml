@@ -25,11 +25,13 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+        
     - name: npm install, build, and test
       run: |
         npm install
         npm run build 
         npm test
+        
     - name: Archive production artifacts
       uses: actions/upload-artifact@v2
       with:
@@ -37,8 +39,15 @@ jobs:
         path: |
           lib
           docs
+          
     - name: Archive code coverage results
       uses: actions/upload-artifact@v2
       with:
         name: code-coverage-report
         path: coverage/lcov-report/index.html
+        
+    - name: Upload lib Artifact
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: libs
+        path: ./libs  
