@@ -1,4 +1,7 @@
 # IR National ID Validator
+Iranian NationalId (NID , SSN) validation package
+[![CI](https://github.com/danialf/lib-NationalId/actions/workflows/node.js.yml/badge.svg)](https://github.com/danialf/lib-NationalId/actions/workflows/node.js.yml)
+[![Package Build](https://github.com/danialf/lib-NationalId/actions/workflows/npm-publish.yml/badge.svg?branch=main)](https://github.com/danialf/lib-NationalId/actions/workflows/npm-publish.yml)
 
 ## Samples
 ``` typescript

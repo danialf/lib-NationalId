@@ -14,7 +14,7 @@ class NationalId {
   constructor(value: string, isValid?: boolean) {
     this._value = value
 
-    if (isValid == undefined) {
+    if (isValid === undefined) {
       this._isValid = NationalId.IsValid(value)
     } else {
       this._isValid = isValid
@@ -111,7 +111,6 @@ class NationalId {
     // examp validation
     if (
       // 1111111111 is valid
-      //v === '1111111111' ||
       value === '0000000000' ||
       value === '2222222222' ||
       value === '3333333333' ||
@@ -130,15 +129,15 @@ class NationalId {
     const c = parseInt(value.charAt(9))
 
     const n =
-      parseInt(value.charAt(0)) * 10 +
-      parseInt(value.charAt(1)) * 9 +
-      parseInt(value.charAt(2)) * 8 +
-      parseInt(value.charAt(3)) * 7 +
-      parseInt(value.charAt(4)) * 6 +
-      parseInt(value.charAt(5)) * 5 +
-      parseInt(value.charAt(6)) * 4 +
-      parseInt(value.charAt(7)) * 3 +
-      parseInt(value.charAt(8)) * 2
+      parseInt(value.charAt(0), 10) * 10 +
+      parseInt(value.charAt(1), 10) * 9 +
+      parseInt(value.charAt(2), 10) * 8 +
+      parseInt(value.charAt(3), 10) * 7 +
+      parseInt(value.charAt(4), 10) * 6 +
+      parseInt(value.charAt(5), 10) * 5 +
+      parseInt(value.charAt(6), 10) * 4 +
+      parseInt(value.charAt(7), 10) * 3 +
+      parseInt(value.charAt(8), 10) * 2
     const r = n % 11
     if (
       (r === 0 && r === c) ||

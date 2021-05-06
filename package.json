@@ -23,7 +23,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "lint": "tslint --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "lint": "tslint --project tsconfig.json -t codeFrame 'src/**/*.ts'",
     "format": "prettier --write \"src/**/*.ts\"",
     "clean": "rimraf lib && rimraf docs",
     "ci": "npm run test:prod && npm run build:all",
